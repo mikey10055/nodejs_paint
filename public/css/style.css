@@ -1,0 +1,29 @@
+ .row { max-width:80rem;}
+
+
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; /*padding: 3px;*/ /*position: fixed;*/ /*bottom: 0; width: 100%;*/ }
+      form input { /*border: 0; padding: 10px; width: 90%; margin-right: .5%;*/ }
+      form input[type=button] { /*width: 9%;*/ background: rgb(130, 224, 255); /*border: none; padding: 10px;*/ }
+      form input[type=button]:active { background:#223344; }
+      #msg_con_con { width:100%; overflow:hidden; }
+      #msg_con {height:400px; overflow-y:scroll; margin-right:-16px;}
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li.msg:nth-child(odd) { background: #eee; }
+      .sysmsg { background:#999999 !important; color:#eeee00; font-style: italic;}
+
+      #buttons_con { background:#282828; padding:10px;}
+      #buttons_con form, #buttons_con input { margin:0px;}
+
+      #top_bar_con { min-height:50px; background:#282828;}
+      #online {padding:10px;}
+      #online h5 { color:#cccccc; margin:0px; padding:0px;}
+
+
+          	html, body {  padding:0px; margin:0px;}
+
+          	/*#cont { width:1500px; margin:20px auto; padding:40px;}*/
+          	canvas {border:1px solid #000000; cursor:  url('brush.png') 0 30, pointer; background:#ffffff;}
+
+            #brsize { background:#000000; border-radius:20000000000000000000px; float:left; margin:5px; position:absolute; top:200px; right:50px;}
