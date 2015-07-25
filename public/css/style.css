@@ -24,6 +24,6 @@
           	html, body {  padding:0px; margin:0px;}
 
           	/*#cont { width:1500px; margin:20px auto; padding:40px;}*/
-          	canvas {border:1px solid #000000; cursor:  url('brush.png') 0 30, pointer; background:#ffffff;}
+          	canvas {border:1px solid #000000; cursor:  url('../i/brush.png') 0 30, pointer; background:#ffffff;}
 
             #brsize { background:#000000; border-radius:20000000000000000000px; float:left; margin:5px; position:absolute; top:200px; right:50px;}

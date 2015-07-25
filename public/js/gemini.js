@@ -189,7 +189,7 @@ function Gemini() {
 	}
 
 	this.canvas.draw.clouds = function(color,x,y,r) {
-		r = 50
+		r = r
 		this.CANVAS.ctx.beginPath();
 		this.CANVAS.ctx.arc(x, y, r, 0, 2 * Math.PI);
 		this.CANVAS.ctx.arc(x+(Math.random() * (5 - 1) + 1), y+(Math.random() * (5 - 1) + 1), r, 0, 2 * Math.PI);
@@ -206,6 +206,19 @@ function Gemini() {
 		this.CANVAS.ctx.fill();
 		this.CANVAS.ctx.restore();
 
+	}
+
+
+	this.canvas.draw.image = function(imageSrc, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) {
+
+		var _this = this;
+
+		var ni = new Image();
+		ni.src = imageSrc;
+
+		ni.onload = function() {
+			_this.CANVAS.ctx.drawImage(ni,sx,sy,sWidth,sHeight,dx,dy,dWidth,dHeight);
+		}
 	}
 
 	this.canvas.clr = function() {

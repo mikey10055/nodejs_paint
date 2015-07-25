@@ -10,7 +10,7 @@
     return color;
 }
 
-  var amount = 500;
+  var amount = 1000;
   var camount = 0;
   var color2;
 
@@ -47,10 +47,15 @@
             socket.emit('paint_blur', color,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
 
 
+          } else if (brush == 'eraser') {
+            socket.emit('paint_eraser', '#ffffff',c.getMousePos(event).x,c.getMousePos(event).y, size/2);
           } else if (brush == 'rand') {
             color2 = getRandomColor();
             camount = 0;
-            c.draw.blur(color2,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
+
+            socket.emit('paint_blur', color2,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
+
+          //  c.draw.blur(color2,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
 
           }
 
@@ -90,12 +95,17 @@
 
           //  c.draw.blur(color,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
 
-          }  else if (brush == 'rand') {
+        }  else if (brush == 'eraser') {
+          socket.emit('paint_eraser', '#ffffff',c.getMousePos(event).x,c.getMousePos(event).y, size/2);
+        } else if (brush == 'rand') {
             if (camount >= amount) {
               color2 = getRandomColor();
               camount = 0;
             }
-            c.draw.blur(color2,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
+
+            socket.emit('paint_blur', color2,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
+
+            //c.draw.blur(color2,c.getMousePos(event).x,c.getMousePos(event).y, size/2);
             camount++;
 
           }
@@ -224,4 +234,8 @@ socket.on('paint_hang_clr_sent', function(){
 
 		  socket.on('paint_blur_sent', function(color,mx,my, size){
 		    c.draw.blur(color,mx,my, size);
+		  });
+
+		  socket.on('paint_eraser_sent', function(color,mx,my, size){
+		    c.draw.circlef(color,mx,my, size);
 		  });

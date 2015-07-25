@@ -9,8 +9,12 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
 
+
 app.get('/css/:name', function (req, res, next){
   res.sendFile(__dirname + '/public/css/' + req.params.name);
+});
+app.get('/i/:name', function (req, res, next){
+  res.sendFile(__dirname + '/public/i/' + req.params.name);
 });
 
 app.get('/js/:name', function (req, res, next){
@@ -121,9 +125,9 @@ io.on('connection', function(socket){
     }
   });
 
-  socket.on('paint_circle_rb', function(color,mx,my, size){
-    io.emit('paint_circle_sent_rb', color,mx,my, size);
-  });
+    socket.on('paint_circle_rb', function(color,mx,my, size){
+      io.emit('paint_circle_sent_rb', color,mx,my, size);
+    });
 
     socket.on('paint_square_sb', function(color,mx,my, size,size){
       io.emit('paint_square_sent_sb', color,mx,my, size,size);
@@ -133,10 +137,13 @@ io.on('connection', function(socket){
       io.emit('paint_clouds_sent', color,mx,my, size);
     });
 
-        socket.on('paint_blur', function(color,mx,my, size){
-          io.emit('paint_blur_sent', color,mx,my, size);
-        });
+    socket.on('paint_blur', function(color,mx,my, size){
+      io.emit('paint_blur_sent', color,mx,my, size);
+    });
 
+    socket.on('paint_eraser', function(color,mx,my, size){
+      io.emit('paint_eraser_sent', color,mx,my, size);
+    });
 
   socket.on('paint_clr', function(){
     io.emit('paint_clr_sent');

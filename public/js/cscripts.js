@@ -92,7 +92,7 @@
           }
         }
         if (incc > 0) {
-          var textt = ppls + 'is typeing ...';
+          var textt = ppls + 'is typing...';
           $('#tty').html(textt);
         } else {
           $('#tty').html('');
