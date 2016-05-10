@@ -3,6 +3,7 @@ currently this has no ui.
 
 to run:
 `npm install` then `node index.js`
+
 then:
   go to `localhost:7777` in your browser
 
