@@ -1,7 +1,7 @@
 {
-  "name": "socket-chat-example",
+  "name": "nodejs_paint",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "multi user canvas painting",
   "dependencies": {
     "express": "^4.10.2",
     "socket.io": "^1.3.5"
